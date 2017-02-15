@@ -10,3 +10,18 @@ package com.webonise.java;
 public interface InterfaceDemo {
     void withdraw();
 }
+
+/**
+ * Marker interface :
+ *  Interfacde having no mo fields and methods.
+ *
+ * Example:
+ *  Serializable, Clonnable, Remote interface
+ *
+ * Advantage:
+ *
+ *  Marker interface is a good way to classify code. *
+ *   Read more: http://javarevisited.blogspot.com/2012/01/what-is-marker-interfaces-in-java-and.html#ixzz4YknC10ao
+ *
+ *
+ */
