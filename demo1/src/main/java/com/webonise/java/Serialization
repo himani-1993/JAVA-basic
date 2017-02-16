@@ -1,6 +1,13 @@
 Serializzation
 - Actual state to byte streams
 
+* If Super class implements Serializable then sub class are also Serializable automatically.
+
+* If Super class is not serializable then when sub class is de serialized then super class’s default constructor will be
+ invoked. Hence all variable will get default value and reference will be null.
+ If a class has implemented Serializable interface then state of this class can be saved. But if same class extend
+ another class which didn’t implement Serializable interface then Super class’s state will not be saved.
+
 
 What happens in reality
 
@@ -18,6 +25,9 @@ Serial version ID-
     - SerialVersionUID is used for version control of object.
     - Consequence of not specifying serialVersionUID is that when you add or modify any field in class then already serialized class will not be able to recover because serialVersionUID generated for new class and for old serialized object will be different.
       Read more: http://javarevisited.blogspot.com/2011/04/top-10-java-serialization-interview.html#ixzz4YkrPktAT
+
+
+      ** Array classes cannot declare an explicit serialVersionUID, so they always have the default computed value, but the requirement for matching serialVersionUID values is waived for array classes.
 
 
 Transient and Static:
