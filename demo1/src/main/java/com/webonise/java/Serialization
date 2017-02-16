@@ -23,4 +23,17 @@ Serial version ID-
 Transient and Static:
 
     - if you don't want any field to be part of object's state then declare it either static or transient based on your need and it will not be included during Java serialization process.
-      
+    - Static variables value can be stored while serializing if the same is provided while initialization.
+    - If variable is defined as Static and Transient both, than static modifier will govern the behavior of variable and not Transient.
+
+    http://javabeginnerstutorial.com/core-java-tutorial/transient-vs-static-variable-java/
+
+
+*   If you try to serialize an object of a class which implements Serializable, but the object includes a reference to an non- Serializable class then a ‘NotSerializableException’ will be thrown at runtime and this is why I always put a SerializableAlert
+
+
+*   if Super class is Serialized and if you don't want to implement serialization in sub-class:
+    To avoid Java serialization you need to implement writeObject() and readObject() method in your Class and need to
+    throw NotSerializableException from those method.
+
+
